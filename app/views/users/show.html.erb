@@ -1,0 +1,16 @@
+<a href ="/posts/index"> Bright Idea </a>
+
+<form action="/sessions" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Log Out">
+</form>
+
+
+<h3>Name: <%= @user.name %> </h3>
+<h3>Email: <%= @user.email %> </h3>
+
+<h4> Total Number of Posts: <%= @user.posts.count %> </h4>
+<h4> Total Number of Likes :<%= @user.likes.count %> </h4>
+
+

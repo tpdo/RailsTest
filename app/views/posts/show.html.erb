@@ -1,0 +1,8 @@
+<a href ="/posts/index"> Bright Idea </a> <%= link_to "Log out", logout_path %>
+<h1> <%= @post.user.name %> says <%= @post.content %>
+
+
+	<h3> People who liked this post: </h3>
+	<% @post.liking_users.uniq.each do |post| %>
+		<p><%= post.name %></p>
+		<% end %>	

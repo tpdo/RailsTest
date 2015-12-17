@@ -1,0 +1,23 @@
+<h1>Edit Profile</h1>
+<a href="/users/<%= @user.id %>"> Home </a>
+ <%= flash[:errors] %>
+<form action="/users/<%= @user.id %>" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<input type="hidden" name="_method" value="patch">
+	<input type="text" name="Email" value="<%= @user.email %>">
+	<input type="text" name="Name" value="<%= @user.name %>">
+	<input type="submit" value="Update">
+</form>
+
+<form action="/users/<%= @user.id %>" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete Account">
+</form>
+
+
+<form action="/sessions" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Log Out">
+</form>
